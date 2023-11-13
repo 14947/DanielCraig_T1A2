@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+@import "./color";
+@import "./breakpoints";
+// first I created the font types as I only had two variations 
+@mixin bold() {
+  font-family: 'Space Mono', monospace;
+  font-weight: bold;
+}
+
+@mixin regular() {
+  font-family: 'Space Mono', monospace;
+  font-weight: 100;
+}
+// then i included them in the attributes
+p {
+  color: $black;
+  @include regular(); 
+  font-size: 16px;
+}
+
+h3 {
+  color: $black;
+  text-align: right;
+  @include bold(); 
+  font-size: 42px;
+  line-height: 40px;
+  text-transform: uppercase;
+
+  @media (max-width: $tablet) and (min-width: $mobile) {
+    font-size: 36px;
+    line-height: 34px;
+    text-align: left;
+  }
+
+  @media screen and (max-width: $mobile) {
+    font-size: 28px; 
+    line-height: 26px;
+    margin: 0;
+    text-align: left;
+  }
+}
+
+h1 {
+  color: $black;
+  @include bold();
+  font-size: 128px;
+  margin: 0;
+  text-shadow: 1px 1px 10px $white;
+  // different sizes for different screen sizes
+  @media (max-width: $tablet) and (min-width: $mobile) {
+    font-size: 80px;
+  }
+
+  @media screen and (max-width: $mobile) {
+    font-size: 40px; 
+  } 
+}
+// Im using h6 as button type
+h6 {
+  color: $white;
+  text-align: center;
+  @include bold(); 
+  font-size: 20px;
+  text-transform: uppercase;
+}

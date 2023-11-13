@@ -1,0 +1,143 @@
+// very similar code to the info-section but had to design it so the inputs work
+.form-div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    align-self: stretch;
+    width: 100%;
+
+    @media (min-width: $large-desktop) {
+        max-width: 1220px;
+        width: 100%; 
+        margin: 0 auto;
+    }
+    // line devider
+    .line {
+        width: 100%;
+        height: 1px;
+        background-color: $black;
+    }
+    // very similar set up to the info section but with a form instead of the <p>
+    .form-content {
+        display: flex;
+        align-items: center;
+        gap: 64px;
+        align-self: stretch;
+        width: 100%;
+        // designed for different screens
+        @media (min-width: $large-desktop) {
+            width: 100%; 
+        }
+        // went with 'all' instead of screen to streamline code
+        @media (max-width: $tablet) and (min-width: $mobile) {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        // went with 'all' instead of screen to streamline code
+        @media (max-width: $mobile) {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .form-content-div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-self: stretch;
+            gap: 48px;
+            flex: 1;
+            width: 100%;
+
+            // removing default margin
+            .remove-margin-p {
+                margin: 0;
+                width: 100%;
+            }
+
+            .input {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-self: stretch;
+                width: 100%;
+                // both email and mobile
+                .input-box-1 {
+                    @include regular(); 
+                    color: $grey;
+                    display: flex;
+                    padding: 14px 16px;
+                    align-items: center;
+                    align-self: stretch;
+                    border-radius: 6px;
+                    // lighter colour for the inputs
+                    border: 1px solid $grey;
+                    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+                    // when the mouse hovers it suggests the box is an input
+                    &:hover, &:active {
+                        outline-color: $hover;
+                        outline-style: solid;
+                        outline-width: 4px;
+                    }
+                    // lighter grey than the focus
+                    &:focus {
+                        outline-color: $hover;
+                        outline-style: solid;
+                        outline-width: 2px;
+                    }
+                }
+                // User leave their message
+                #message-box {
+                    @include regular(); 
+                    color: $grey;
+                    display: flex;
+                    vertical-align: text-top;
+                    align-self: stretch;
+                    height: 120px;
+                    border-radius: 6px;
+                    border: 1px solid $grey;
+                    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+                    padding: 14px 16px;
+                    // when the mouse hovers it suggests the box is an input
+                    &:hover, &:active {
+                        outline-color: $hover;
+                        outline-style: solid;
+                        outline-width: 4px;
+                    }
+                    // lighter grey than the focus
+                    &:focus {
+                        outline-color: $hover;
+                        outline-style: solid;
+                        outline-width: 2px;
+                    }
+                }
+            }
+            // this is used in two places as a submit / info 
+            a {
+                text-decoration: none;
+            }
+            .resume-button {
+                display: flex;
+                height: 64px;
+                padding: 14px 16px;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                // it stretches the width of the div its inside
+                align-self: stretch;
+                width: 100%;
+                background-color: $blue;
+                color: $white;
+                border: none;
+                text-decoration: none;
+                // the stylistic line through hover
+                &:hover, &:active {
+                    background-color: $hover;
+                    text-decoration: line-through;
+                }    
+            }
+        }
+    }
+}

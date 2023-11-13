@@ -1,0 +1,62 @@
+.info-div {
+    display: flex;
+    // this controls line + content
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    align-self: stretch;
+    // went with 'all' instead of screen to streamline code
+    @media screen and (min-width: $large-desktop) {
+        // keeps the margins the same as the other elements on larger screens
+        max-width: 1220px;
+        width: 100%; 
+        // no margin on top and bottom and the left and right is center
+        margin: 0 auto; 
+    }
+    // went with 'all' instead of screen to streamline code
+    @media screen and (max-width: $mobile) {
+        gap: 16px; 
+        align-self: center;
+    }
+    // the devider line spans the whole length
+    .line {
+        width: 100%;
+        height: 1px;
+        background-color: $black;
+    }
+    // this controls the direction of he content - 'mobile = column' 'big screen = row'
+    .info-content {
+        display: flex;
+        align-items: center;
+        gap: 64px;
+        align-self: stretch;
+        // this controls the order - ive used a reverse to flip the order as the headline should be ontop
+        @media (max-width: $tablet) and (min-width: $mobile) {
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 16px;
+        }
+
+        @media screen and (max-width: $mobile) {
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .info-content-div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 48px;
+            flex: 1;
+
+            // removing default margin
+            .remove-margin-p {
+                margin: 0;
+            }
+        }
+    }
+}

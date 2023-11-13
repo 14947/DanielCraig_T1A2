@@ -1,0 +1,75 @@
+@import "./styles/components/header";
+@import "./styles/components/footer";
+@import "./styles/components/headline";
+@import "./styles/components/card";
+@import "./styles/components/blog";
+@import "./styles/components/info-section";
+@import "./styles/defaults/breakpoints";
+@import "./styles/components/form-section";
+@import "./styles/defaults/color";
+@import "./styles/defaults/font";
+
+// Setting up the project to display as flex for responsive design
+html, body {
+    // removes the flow into the right side of the screen
+    overflow-x: hidden; 
+    // removes any default margin
+    margin: 0;
+}
+
+// this section controls all the divs inside - its got the master diplay as well as the grap control and responsive margin
+section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 64px;
+    align-self: stretch;
+
+    @media (min-width: $large-desktop) {
+        // max-width: 1220px;
+        padding: 128px;
+    }
+    
+    @media (max-width: $large-desktop) and (min-width: $desktop) {
+        padding: 128px;
+    }
+    
+    @media (max-width: $desktop) and (min-width: $tablet) {
+        padding: 64px;
+    }
+
+    @media (max-width: $tablet) and (min-width: $mobile) {
+        padding: 32px;
+    }
+    
+    @media (max-width: $mobile) {
+        padding: 16px;
+        gap: 32px;
+    }
+    
+    // each page has a hero image - stylistically I want it to look look like its floating in the background
+    .hero-img {
+        width: 384px;
+        height: 384px;
+        position: absolute;
+        right: 314px;
+        top: 188px;
+        // add different screen sizes I want it to change size and sit in different positions
+        @media (max-width: $tablet) and (min-width: $mobile) {
+            right: 76px;
+            top: 120px;
+            width: 320px;
+            height: 320px;
+            z-index: -1;
+        }
+        // here I wanted it to be more right aligned - it looks nice on bigger phones as well as small ones
+        @media screen and (max-width: $mobile) {
+            left: 32px;
+            top: 128px;
+            width: 200px;
+            height: 200px;
+            z-index: -1;
+        }
+    }
+}

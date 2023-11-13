@@ -1,0 +1,117 @@
+@import "../defaults/color";
+@import "../defaults/font";
+@import "../defaults/breakpoints";
+// above we're importing all the default settings
+header {
+    // this is designed to stay fixed at the top filling the space left, right & above with blue
+    min-width: 100vw;
+    background-color: $blue;
+    display: flex;
+    justify-content: center;
+    
+    // this box controls all of the header elements - I wanted these elements to stay inline with the section elements
+    .header-div {
+        display: flex;
+        // these elements need to display in a row
+        flex-direction: row;
+        // spread out with each element up against the end
+        justify-content: space-between;
+        align-items: center;
+        align-self: stretch;
+        // Setting space mono regular variable the parent font family to effect all boxes below
+        @include regular;
+        // max-width: 1220px;
+        width: 100%;
+        height: 96px;
+        
+        // went with 'all' instead of screen to streamline code
+        // max width so once we hit 1220px+ it stays the same size and the margins get bigger
+        @media (min-width: $large-desktop) {
+            max-width: 1220px;
+        }
+        // here is the max padding - it gets smaller as we get down into smaller screen sizes
+        @media (max-width: $large-desktop) and (min-width: $desktop) {
+            padding-left: 128px;
+            padding-right: 128px;
+        }
+        
+        @media (max-width: $desktop) and (min-width: $tablet) {
+            padding-left: 64px;
+            padding-right: 64px; 
+        }
+    
+        @media (max-width: $tablet) and (min-width: $mobile) {
+            padding-left: 32px;
+            padding-right: 32px;
+        }
+        
+        @media (max-width: $mobile) {
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+        
+        
+        // Here is the logo paramaters
+        .logo, a {
+            display: flex;
+            justify-content: flex-start;
+            // i used SVG for more control rather than jpg - its better for the user to be able to
+            svg path, & {
+                fill: $white;
+            }
+            // the link box controls the hover so for example  the outline of the svg triggered the hover which was a bad user experience having link control the hover makes it better for the user
+            &:hover, &:active {
+                svg path, & {
+                    fill: $hover;
+                }
+            }
+            // I used svg for more control over the colors as well as it is pixel perfect
+            svg {
+                width: 253px;
+                height: 35px;
+                // it gets smaller on mobile -
+                @media (max-width: $mobile) {
+                    width: 130px;
+                    height: 19px;
+                }
+            }
+        }
+
+
+        // hover states of the think
+        nav {
+            display: flex;
+            align-items: flex-start;
+            gap: 64px;
+            font-size: 16px;
+            line-height: normal;
+            text-transform: uppercase;
+            // smaller gap on mobile to make it easy for the user
+            @media (max-width: $mobile) {
+                gap: 16px;
+                
+            }
+            
+            a {
+                color: $white;
+                
+                &:link {
+                    color: $white;
+                }
+                // i used the line through as a stylistic choice
+                &:hover, &:active {
+                    color: $hover;
+                    text-decoration-line: line-through;
+                }
+            }
+        }
+    }        
+}   
+
+
+
+
+
+
+
+

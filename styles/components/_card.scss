@@ -1,0 +1,86 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    align-self: stretch;
+    // went with 'all' instead of screen to streamline code - no one is printing this site!
+    @media (min-width: $large-desktop) {
+        max-width: 1220px;
+        width: 100%; 
+        margin: 0 auto;
+    }
+    // I wanted the hover to effect the whole box
+   .card-link {
+        text-decoration: none;
+        // the line through effect needed to happe on everything - suggesting to click
+        &:hover, &:active {
+            text-decoration: line-through;
+            color: $blue;
+            font-style: italic;
+            // wanted the image to have a greyscale effect
+            img {
+                // safari
+                -webkit-filter: grayscale(100%); 
+                filter: grayscale(100%);
+            }
+        }
+    
+        .card-grid {
+            column-gap: 64px;
+            display: grid;
+            // this keeps all three grid-items equal
+            grid-auto-columns: minmax(0, 1fr);
+            grid-auto-flow: column;
+            // went with 'all' instead of screen to streamline code
+            @media (max-width: $tablet) and (min-width: $mobile) {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 32px;
+                align-self: stretch;
+            }
+
+            @media (max-width: $mobile) {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 32px;
+                align-self: stretch;
+            }
+            
+            .grid-item {
+                display: flex;
+                align-items: center;
+                align-self: stretch;
+                grid-row: 1 / 3;
+            }
+
+            // this controls the image size - on tablet it was getting huge!
+            .card-image {
+                width: 100%;
+                // went with 'all' instead of screen to streamline code
+                @media (max-width: $tablet) and (min-width: $mobile) {
+                    width: 60%;
+                    margin: auto;
+                }
+                
+                @media (max-width: $mobile) {
+                    width: 100%;
+                }
+                
+            }
+        }
+    } 
+}
+
+// the line needs to stop growing at 1220 to stay in the center
+.line {
+    width: 100%;
+    height: 1px;
+    background-color: $black;
+    // went with 'all' instead of screen to streamline code
+    @media (min-width: $large-desktop) {
+        max-width: 1220px;
+    }
+}
