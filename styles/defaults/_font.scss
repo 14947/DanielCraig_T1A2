@@ -43,16 +43,16 @@ h3 {
 h1 {
   color: $black;
   @include bold();
-  font-size: 128px;
+  font-size: 104px;
   margin: 0;
   text-shadow: 1px 1px 10px $white;
   // different sizes for different screen sizes
   @media (max-width: $tablet) and (min-width: $mobile) {
-    font-size: 80px;
+    font-size: 72px;
   }
 
   @media screen and (max-width: $mobile) {
-    font-size: 40px; 
+    font-size: 36px; 
   } 
 }
 // Im using h6 as button type

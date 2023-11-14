@@ -37,18 +37,18 @@ h1 {
   color: black;
   font-family: "Space Mono", monospace;
   font-weight: bold;
-  font-size: 128px;
+  font-size: 104px;
   margin: 0;
   text-shadow: 1px 1px 10px white;
 }
 @media (max-width: 950px) and (min-width: 576px) {
   h1 {
-    font-size: 80px;
+    font-size: 72px;
   }
 }
 @media screen and (max-width: 576px) {
   h1 {
-    font-size: 40px;
+    font-size: 36px;
   }
 }
 
@@ -187,18 +187,18 @@ h1 {
   color: black;
   font-family: "Space Mono", monospace;
   font-weight: bold;
-  font-size: 128px;
+  font-size: 104px;
   margin: 0;
   text-shadow: 1px 1px 10px white;
 }
 @media (max-width: 950px) and (min-width: 576px) {
   h1 {
-    font-size: 80px;
+    font-size: 72px;
   }
 }
 @media screen and (max-width: 576px) {
   h1 {
-    font-size: 40px;
+    font-size: 36px;
   }
 }
 
@@ -534,6 +534,10 @@ footer .footer-div .social i:hover, footer .footer-div .social i:active {
     gap: 16px;
   }
 }
+.form-div .form-content .contact-details {
+  display: flex;
+  flex-direction: column;
+}
 .form-div .form-content .form-content-div {
   display: flex;
   flex-direction: column;
@@ -657,18 +661,18 @@ h1 {
   color: black;
   font-family: "Space Mono", monospace;
   font-weight: bold;
-  font-size: 128px;
+  font-size: 104px;
   margin: 0;
   text-shadow: 1px 1px 10px white;
 }
 @media (max-width: 950px) and (min-width: 576px) {
   h1 {
-    font-size: 80px;
+    font-size: 72px;
   }
 }
 @media screen and (max-width: 576px) {
   h1 {
-    font-size: 40px;
+    font-size: 36px;
   }
 }
 
