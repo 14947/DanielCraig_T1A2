@@ -731,6 +731,36 @@ section .hero-img {
   right: 314px;
   top: 188px;
 }
+@keyframes animate-fade-slide {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@media (min-width: 1440px) {
+  section .hero-img {
+    position: absolute;
+    right: 314px;
+    animation-duration: 0.5s;
+    animation-name: animate-fade-slide;
+    animation-delay: 0.5s;
+    animation-fill-mode: backwards;
+  }
+}
+@media (max-width: 1440px) and (min-width: 1150px) {
+  section .hero-img {
+    position: absolute;
+    right: 314px;
+    animation-duration: 0.5s;
+    animation-name: animate-fade-slide;
+    animation-delay: 0.5s;
+    animation-fill-mode: backwards;
+  }
+}
 @media (max-width: 950px) and (min-width: 576px) {
   section .hero-img {
     right: 76px;

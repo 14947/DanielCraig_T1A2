@@ -55,6 +55,39 @@ section {
         position: absolute;
         right: 314px;
         top: 188px;
+
+        @keyframes animate-fade-slide {
+            0% {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+            // took me a while to figure out how to get it to land in an absolute spot
+            100% {
+                opacity: 1;
+                // ending at 0 resulted in the perfect positon
+                transform: translateX(0);
+            }
+        }
+        // only works on desktop - slide and fade in
+        @media (min-width: $large-desktop) {
+            position: absolute;
+            right: 314px;
+            // the delay helps capture users attention
+            animation-duration: 0.5s;
+            animation-name: animate-fade-slide;
+            animation-delay: 0.5s;
+            animation-fill-mode: backwards;
+        }
+
+        @media (max-width: $large-desktop) and (min-width: $desktop) {
+            position: absolute;
+            right: 314px;
+            animation-duration: 0.5s;
+            animation-name: animate-fade-slide;
+            animation-delay: 0.5s;
+            animation-fill-mode: backwards;
+        }
+        
         // add different screen sizes I want it to change size and sit in different positions
         @media (max-width: $tablet) and (min-width: $mobile) {
             right: 76px;
