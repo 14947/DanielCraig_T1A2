@@ -2,6 +2,7 @@
 @import "../defaults/font";
 @import "../defaults/breakpoints";
 // above we're importing all the default settings
+// this is a component
 header {
     // this is designed to stay fixed at the top filling the space left, right & above with blue
     min-width: 100vw;
