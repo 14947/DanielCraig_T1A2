@@ -6,7 +6,7 @@
 * View the Github repo here: https://github.com/14947/DanielCraig_T1A2
 
 #### A link to your presentation video
-* View the video here:
+* View the video here: https://youtu.be/xxVH6xPCuNU?feature=shared
 * I go into the depth of developing this site in the deck. View the slide deck here: https://docs.google.com/presentation/d/1G4G5I16S44fny-sZxl8TExMYByQ8_HCsAtJNXVrj0-E/edit?usp=sharing
 
 #### Description of your portfolio website, including,
